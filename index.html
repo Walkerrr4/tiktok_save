@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download Video TikTok</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+        .container {
+            width: 80%;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin: 15px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .result {
+            margin-top: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Download Video TikTok</h1>
+    <p>Masukkan URL video TikTok yang ingin Anda unduh:</p>
+    <input type="text" id="tiktokUrl" placeholder="Contoh: https://www.tiktok.com/@user/video/1234567890">
+    <button onclick="downloadVideo()">Unduh Video</button>
+
+    <div class="result" id="result"></div>
+</div>
+
+<script>
+    function downloadVideo() {
+        const url = document.getElementById('tiktokUrl').value;
+        const resultDiv = document.getElementById('result');
+        
+        if (!url) {
+            resultDiv.innerHTML = '<p style="color: red;">Harap masukkan URL TikTok yang valid.</p>';
+            return;
+        }
+
+        // Proses untuk menampilkan link download
+        // Gantilah URL API di bawah ini dengan API yang benar jika ada
+        const downloadUrl = 'https://tiksave.io/api/ajaxSearch'=${encodeURIComponent(url)}`;
+
+        // Simulasi response dari API
+        setTimeout(() => {
+            resultDiv.innerHTML = `
+                <p>Video siap diunduh!</p>
+                <a href="${downloadUrl}" target="_blank" style="display: inline-block; background-color: #4CAF50; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px;">Unduh Video</a>
+            `;
+        }, 1000);
+    }
+</script>
+
+</body>
+</html>
